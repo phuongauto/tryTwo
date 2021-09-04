@@ -60,14 +60,18 @@ public class Topic_07_TextBox_TextArea_randomEmail {
 	
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/lib-macos/chromedriver");
+//		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/winLib/geckodriver.exe");
+//		driver = new FirefoxDriver();
+		
+		System.setProperty("webdriver.chrome.driver", ".\\winLib\\chromedriver.exe");
 		driver = new ChromeDriver();
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://demo.guru99.com/v4/");
 		name = "phuong yeah";
-		dob = "08-30-1989";
+		dob = "30-12-1989";
 		// format of input dob is different to format of output dob, so we need "dobCompare" to verify
-		dobCompare = "1989-08-30";
+		dobCompare = "1989-12-30";
 		address = "564 Suitable Address";
 		city = "New York";
 		state = "California";
