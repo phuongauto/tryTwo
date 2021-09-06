@@ -20,13 +20,14 @@ public class No_01_Check_Environment {
 	public void beforeClass() {
 //		System.setProperty("webdriver.gecko.driver", ".\\winLib\\geckodriver.exe");
 //		driver = new FirefoxDriver();
-		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/winLib/geckodriver.exe");
-		driver = new FirefoxDriver();
+//		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/winLib/geckodriver.exe");
+//		driver = new FirefoxDriver();
 		
-//		System.setProperty("webdriver.chrome.driver", ".\\winLib\\chromedriver.exe");
-//		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", ".\\winLib\\chromedriver.exe");
+		driver = new ChromeDriver();
 //		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/winLib/chromedriver.exe");
 //		driver = new ChromeDriver();
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4/");
@@ -37,6 +38,7 @@ public class No_01_Check_Environment {
 		// Login Page Url matching
 		String loginPageUrl = driver.getCurrentUrl();
 		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
+		System.out.println(loginPageUrl);
 	}
 
 	@Test
